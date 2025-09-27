@@ -1,161 +1,139 @@
 # CloudStream Google Drive Extension
 
+> **✅ WORKING VERSION** - Fixed and ready to use!
+
 A CloudStream extension that allows you to stream videos directly from your Google Drive account.
 
-## Features
+## 🚀 Quick Start
 
-- 🔐 **Secure Authentication**: OAuth2 integration with Google Drive
-- 📱 **Mobile Optimized**: Designed for Android devices
-- 🎥 **Video Streaming**: Stream videos directly from Google Drive using ExoPlayer
-- 🔍 **Search Functionality**: Search through your Google Drive videos
-- 📊 **Video Information**: Display video metadata including duration, size, and creation date
-- 🎨 **Modern UI**: Material Design 3 interface
+### Installation
 
-## Installation
-
-1. **Build the Extension**:
+1. **Download the extension**:
    ```bash
-   ./gradlew assembleRelease
+   # Download the working provider file
+   wget https://raw.githubusercontent.com/pravinpkme/cloudstream-google-drive-extension/main/extensions/GoogleDrive/GoogleDriveProvider.kt
    ```
 
-2. **Install on Device**:
-   - Copy the generated APK to your Android device
-   - Install the APK using your preferred method
-
-3. **Configure in CloudStream**:
+2. **Install in CloudStream**:
    - Open CloudStream app
-   - Go to Settings > Extensions
-   - Enable the Google Drive extension
-   - Authenticate with your Google account
+   - Go to **Settings → Extensions**
+   - Tap **"Add Extension"** or **"+"**
+   - Select the `GoogleDriveProvider.kt` file
+   - **Enable the extension**
 
-## Usage
+### Adding Your Videos
 
-1. **Authentication**:
-   - Open the extension
-   - Tap "Authenticate with Google"
-   - Sign in with your Google account
-   - Grant necessary permissions
+1. **Share your Google Drive videos publicly**:
+   - Right-click video → Share → "Anyone with the link can view"
 
-2. **Browse Videos**:
-   - View all your Google Drive videos
-   - Use the search functionality to find specific videos
-   - Tap on any video to start streaming
+2. **Get the file ID from the URL**:
+   ```
+   https://drive.google.com/file/d/FILE_ID_HERE/view
+   ```
 
-3. **Stream Videos**:
-   - Videos will open in the built-in ExoPlayer
-   - Full-screen playback supported
-   - Quality selection available
+3. **Update the extension** (optional):
+   - Edit `GoogleDriveProvider.kt`
+   - Replace sample file IDs with your real ones
 
-## API Configuration
+## ✅ What's Fixed
 
-The extension uses the Google Drive API with the provided API key:
+- **✅ Correct package structure** (`providers` instead of `extractors`)
+- **✅ Proper CloudStream API usage** 
+- **✅ Multiple streaming URL formats**
+- **✅ Working search functionality**
+- **✅ Thumbnail support**
+- **✅ Error handling**
+
+## 📁 Project Structure
+
 ```
+├── extensions/GoogleDrive/
+│   ├── GoogleDriveProvider.kt    # Main extension file
+│   └── extension.json           # Extension configuration
+├── dist/                        # Built extension files
+├── build.sh                     # Build script
+├── repo.json                    # Repository configuration
+└── README.md                    # This file
 ```
 
-## Technical Details
-
-### Dependencies
-- **CloudStream Core**: 4.0.0
-- **Google Drive API**: v3
-- **ExoPlayer**: 2.19.1
-- **Material Design**: 3.0
-- **Kotlin Coroutines**: 1.7.3
-
-### Architecture
-- **MVVM Pattern**: ViewModel-based architecture
-- **Repository Pattern**: GoogleDriveService for API calls
-- **Reactive UI**: LiveData for UI updates
-- **Modern Android**: ViewBinding, Lifecycle components
-
-### Security
-- OAuth2 authentication
-- Secure token storage
-- HTTPS-only communication
-- No sensitive data in logs
-
-## Development
-
-### Prerequisites
-- Android Studio Arctic Fox or later
-- Kotlin 1.8+
-- Android SDK 21+
-- Google Drive API access
+## 🛠️ Development
 
 ### Building
+
 ```bash
-# Debug build
-./gradlew assembleDebug
+# Build the extension
+./build.sh
 
-# Release build
-./gradlew assembleRelease
-
-# Run tests
-./gradlew test
+# Output will be in dist/ folder
 ```
 
-### Project Structure
-```
-src/main/java/com/cloudstream/googledrive/
-├── GoogleDriveExtension.kt          # Main CloudStream extension
-├── GoogleDriveService.kt            # Google Drive API service
-├── ui/
-│   ├── MainActivity.kt              # Main video browser
-│   ├── VideoPlayerActivity.kt       # Video player
-│   ├── AuthActivity.kt              # Authentication
-│   ├── adapter/
-│   │   └── VideoAdapter.kt         # Video list adapter
-│   └── viewmodel/
-│       └── MainViewModel.kt         # Main view model
-```
+### Testing
 
-## Troubleshooting
+1. Copy `dist/GoogleDriveProvider.kt` to your device
+2. Install in CloudStream
+3. Test with your Google Drive videos
 
-### Common Issues
+## 🔧 Configuration
 
-1. **Authentication Failed**:
-   - Check internet connection
-   - Verify Google account permissions
-   - Clear app data and retry
+### Supported Video Formats
+- MP4, MKV, AVI, MOV, WMV
+- Any format supported by Android ExoPlayer
 
-2. **Videos Not Loading**:
-   - Ensure Google Drive API is enabled
-   - Check API key validity
-   - Verify video file permissions
+### URL Formats Supported
+- `https://drive.google.com/file/d/FILE_ID/view`
+- `https://drive.google.com/open?id=FILE_ID`
+- `https://docs.google.com/uc?id=FILE_ID`
+- Direct file IDs
 
-3. **Playback Issues**:
-   - Check video format compatibility
-   - Ensure stable internet connection
-   - Try different video quality
+## 📖 Documentation
 
-### Debug Information
-- Enable debug logging in CloudStream settings
-- Check Android logs for error messages
-- Verify API quota limits
+- [**Installation Guide**](FIXED_EXTENSION_GUIDE.md) - Detailed setup instructions
+- [**Setup Guide**](setup_extension.md) - Quick setup reference
+- [**CloudStream Extension Info**](CLOUDSTREAM_EXTENSION.md) - Extension format details
 
-## Contributing
+## 🐛 Troubleshooting
+
+### Extension Not Loading
+- Ensure file is named exactly `GoogleDriveProvider.kt`
+- Restart CloudStream after installation
+- Check CloudStream version compatibility
+
+### Videos Not Playing
+- Verify videos are shared publicly
+- Try different streaming options
+- Check internet connection
+
+### No Videos Showing
+- Extension shows sample videos by default
+- Replace sample file IDs with your actual file IDs
+- Ensure file IDs are correct format
+
+## 🔮 Roadmap
+
+- [ ] OAuth2 authentication for private videos
+- [ ] Google Drive API integration
+- [ ] Folder/playlist support
+- [ ] Video quality selection
+- [ ] Subtitle support
+- [ ] Caching for better performance
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Add tests if applicable
+4. Test with CloudStream
 5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
-## Support
+## 🆘 Support
 
-For issues and questions:
-- Check the troubleshooting section
-- Review CloudStream documentation
-- Open an issue on GitHub
+- **Issues**: [GitHub Issues](https://github.com/pravinpkme/cloudstream-google-drive-extension/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/pravinpkme/cloudstream-google-drive-extension/discussions)
 
-## Changelog
+---
 
-### Version 1.0.0
-- Initial release
-- Google Drive integration
-- Video streaming support
-- Authentication system
-- Modern Material Design UI
+**⭐ If this extension works for you, please star the repository!**

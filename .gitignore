@@ -1,0 +1,25 @@
+# Build outputs
+dist/
+build/
+*.zip
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# API Keys (keep private)
+api_keys.txt
+secrets.properties
