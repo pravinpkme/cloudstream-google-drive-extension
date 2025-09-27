@@ -50,7 +50,6 @@ A CloudStream extension that allows you to stream videos directly from your Goog
 
 The extension uses the Google Drive API with the provided API key:
 ```
-AIzaSyAbaRKmjHu-A73tdhEXRatmI5WWk-GOwRI
 ```
 
 ## Technical Details
