@@ -1,0 +1,24 @@
+{
+  "name": "Google Drive",
+  "version": "1.0.0",
+  "description": "Stream videos directly from your Google Drive account",
+  "author": "pravinpkme",
+  "main": "GoogleDriveProvider.kt",
+  "api": {
+    "name": "Google Drive",
+    "url": "https://drive.google.com",
+    "supportedTypes": ["movie", "tv"],
+    "hasMainPage": true,
+    "hasDownloadSupport": true,
+    "hasQuickSearch": false
+  },
+  "permissions": [
+    "INTERNET",
+    "ACCESS_NETWORK_STATE"
+  ],
+  "dependencies": [
+    "com.google.apis:google-api-services-drive:v3-rev20220815-2.0.0",
+    "com.google.api-client:google-api-client-android:2.2.0",
+    "com.google.android.exoplayer:exoplayer:2.19.1"
+  ]
+}
