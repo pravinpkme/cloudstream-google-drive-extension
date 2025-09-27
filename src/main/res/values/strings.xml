@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CloudStream Google Drive</string>
+    <string name="google_drive_videos">Google Drive Videos</string>
+    <string name="authenticate_with_google">Authenticate with Google</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_out">Sign out</string>
+    <string name="back_to_videos">Back to Videos</string>
+    <string name="video_player">Video Player</string>
+    <string name="google_authentication">Google Authentication</string>
+    <string name="connect_to_google_drive">Connect to Google Drive</string>
+    <string name="authentication_required">Authentication Required</string>
+    <string name="not_signed_in">Not signed in</string>
+    <string name="signed_in_as">Signed in as: %s</string>
+    <string name="successfully_signed_in">Successfully signed in!</string>
+    <string name="sign_in_failed">Sign in failed: %s</string>
+    <string name="failed_to_load_videos">Failed to load videos: %s</string>
+    <string name="failed_to_search_videos">Failed to search videos: %s</string>
+    <string name="invalid_video_url">Invalid video URL</string>
+    <string name="error_initializing_player">Error initializing player: %s</string>
+    <string name="failed_to_load_video">Failed to load video</string>
+    <string name="unknown">Unknown</string>
+    <string name="google_drive_integration">Google Drive Integration</string>
+    <string name="access_and_stream_description">Access and stream your Google Drive videos directly in CloudStream</string>
+    <string name="refresh">Refresh</string>
+    <string name="duration_format">%d:%02d:%02d</string>
+    <string name="duration_format_short">%d:%02d</string>
+    <string name="file_size_gb">%.1f GB</string>
+    <string name="file_size_mb">%.1f MB</string>
+    <string name="file_size_kb">%.1f KB</string>
+    <string name="date_format">MMM dd, yyyy</string>
+</resources>
